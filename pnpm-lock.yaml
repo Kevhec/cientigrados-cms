@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@sanity/locale-es-es':
+    specifier: ^1.0.1
+    version: 1.0.1(sanity@3.23.2)
   '@sanity/vision':
     specifier: ^3.23.2
     version: 3.23.2(@babel/runtime@7.23.6)(@codemirror/lint@6.4.2)(@codemirror/state@6.3.3)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.1.2)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.2)
@@ -35,7 +38,7 @@ devDependencies:
     specifier: ^8.6.0
     version: 8.56.0
   prettier:
-    specifier: ^3.0.2
+    specifier: ^3.1.1
     version: 3.1.1
   typescript:
     specifier: ^5.1.6
@@ -2248,6 +2251,14 @@ packages:
       tar-fs: 2.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@sanity/locale-es-es@1.0.1(sanity@3.23.2):
+    resolution: {integrity: sha512-y60NEBOXb/aUBFr/kOclu+zOGTsYdJ/jFiprkUFKxC+7Tz6vIAdmhB6FIIHjqNxv1+4oC5tAGD5+Uk6GgKjK5A==}
+    peerDependencies:
+      sanity: ^3.22.0
+    dependencies:
+      sanity: 3.23.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.2)
     dev: false
 
   /@sanity/logos@2.1.4(@sanity/color@3.0.0-beta.9)(react@18.2.0):

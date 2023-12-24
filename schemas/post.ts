@@ -1,65 +1,42 @@
-import {defineField, defineType} from 'sanity'
+import { defineType } from 'sanity';
 
 export default defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Publicaciones',
   type: 'document',
   fields: [
-    defineField({
+    {
       name: 'title',
-      title: 'Title',
-      type: 'string',
-    }),
-    defineField({
+      title: 'Título',
+      type: 'string'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
+        maxLength: 96
+      }
+    },
+    {
       name: 'author',
-      title: 'Author',
+      title: 'Autor',
       type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
+      to: {type: 'author'}
+    },
+    {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Imagen Principal',
       type: 'image',
       options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),
-  ],
-
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+        hotspot: true
+      }
     },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    },
-  },
+    {
+      name: 'content',
+      title: 'Contenido',
+      type: 'contentBlock',
+    }
+  ]
 })

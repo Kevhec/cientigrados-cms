@@ -1,50 +1,28 @@
-import {defineField, defineType} from 'sanity'
+import { defineType } from 'sanity'
 
 export default defineType({
   name: 'author',
-  title: 'Author',
+  title: 'Autores',
   type: 'document',
   fields: [
-    defineField({
+    {
       name: 'name',
-      title: 'Name',
       type: 'string',
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'name',
-        maxLength: 96,
-      },
-    }),
-    defineField({
+      title: 'Nombre'
+    },
+    {
       name: 'image',
-      title: 'Image',
       type: 'image',
+      title: 'Imagen',
       options: {
         hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
-    }),
+      }
+    }
   ],
   preview: {
     select: {
       title: 'name',
       media: 'image',
-    },
-  },
+    }
+  }
 })
