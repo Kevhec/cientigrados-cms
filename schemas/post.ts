@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      type: 'datetime',
+      name: 'publishedAt',
+      title: 'Fecha de publicación'
+    },
+    {
       name: 'title',
       title: 'Título',
       type: 'string'
@@ -32,6 +37,11 @@ export default defineType({
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'excerpt',
+      title: 'Extracto',
+      type: 'text'
     },
     {
       name: 'content',
