@@ -1,4 +1,4 @@
-import { defineType } from 'sanity';
+import { defineType, type Rule } from 'sanity';
 
 export default defineType({
   name: 'post',
@@ -35,8 +35,17 @@ export default defineType({
       title: 'Imagen Principal',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+        
+      },
+      fields: [
+        {
+          title: 'Texto alternativo',
+          name: 'alt',
+          type: 'string',
+          validation: (Rule: Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'excerpt',
